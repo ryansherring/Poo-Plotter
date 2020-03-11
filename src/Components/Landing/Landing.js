@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Description from './Description/Description'
 
 
 class Landing extends Component {
@@ -7,7 +6,7 @@ class Landing extends Component {
   render(){
     return(
       <>
-        <Description />
+        <p>hi! Welcome to PooPlotter!</p>
       </>
     )
   }

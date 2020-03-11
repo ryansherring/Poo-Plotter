@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Button, Modal, Form, } from 'react-bootstrap';
+import { Button, Modal, Form, } from 'semantic-ui-react';
 import axios from 'axios'
 // import { render } from '@testing-library/react';
 
 
 
-class Signup extends Component {
+class Register extends Component {
   state = {
     name: '',
     email: '',
@@ -23,7 +23,7 @@ class Signup extends Component {
   handleSubmit = event => {
     event.preventDefault()
     console.log(this.state)
-    axios.post(`${process.env.REACT_APP_API_URL}/signup`, this.state)
+    axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, this.state)
       .then(res => {
         console.log(res);
         this.close()
@@ -100,17 +100,6 @@ class Signup extends Component {
                         value={this.state.password2}
                       />
                     </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='homeCity'>Home City</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='text'
-                        id='homeCity'
-                        name='homeCity'
-                        value={this.state.homeCity}
-                      />
-                    </Form.Field>
                   </Form>
                 </div>
               </div>
@@ -130,4 +119,4 @@ class Signup extends Component {
 
 
 
-export default Signup;
+export default Register;

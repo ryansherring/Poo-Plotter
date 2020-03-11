@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-//import { Link } from 'react-router-dom';
-import { Nav, Form, FormControl, Button} from 'react-bootstrap';
-// import Signup from './Auth/Signup';
-// import App from '../../App'
+import React, { Component } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
+import Register from './Auth/Signup';
+import Login from './Auth/Login';
 
-
-class Navbar extends Component {
+export default class Navbar extends Component {
   state = {
     // sets default active item
     activeItem: 'profile'
@@ -15,24 +14,42 @@ class Navbar extends Component {
 
   render = props => {
     console.log(this.props)
-    //const { activeItem } = this.state
+    const { activeItem } = this.state
     return (
-      <>
-        <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="/">Navbar</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link to="/signup">Sign up!</Nav.Link>
-            {/* <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link> */}
-          </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
-        </Navbar>
-        <br />
-      </>
+      <Menu inverted>
+        <Menu.Item header>
+          <h3>PooPlotter</h3></Menu.Item>
+        <Menu.Menu position='right'>
+          {this.props.currentUser ? (
+            <>
+              <Menu.Item
+                name='profile'
+                onClick={this.handleItemClick}
+              >
+                <Link to='/profile'>Profile</Link>
+              </Menu.Item>
+
+              <Menu.Item
+                name='logout'
+                active={activeItem === 'logout'}
+                onClick={this.props.logout}
+              >
+              </Menu.Item>
+            </>
+          ) : (
+              <>
+                <Menu.Item>
+                  < Register />
+                </Menu.Item>
+                <Menu.Item>
+                  < Login setCurrentUser={this.props.setCurrentUser} />
+                </Menu.Item>
+              </>
+            )}
+
+        </Menu.Menu>
+      </Menu>
+
     )
   }
 }
-export default Navbar;
