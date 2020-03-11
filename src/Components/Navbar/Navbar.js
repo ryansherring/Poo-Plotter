@@ -17,7 +17,7 @@ export default class Navbar extends Component {
     const { activeItem } = this.state
     return (
       <Menu inverted>
-        <Menu.Item header>
+        <Menu.Item header to='/'>
           <h3>PooPlotter</h3></Menu.Item>
         <Menu.Menu position='right'>
           {this.props.currentUser ? (
