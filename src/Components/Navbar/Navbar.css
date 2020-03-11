@@ -1,0 +1,39 @@
+#app-header {
+    text-align: center;
+    background: green;
+    color: whitesmoke;
+    padding: 0.3em;
+  }
+  
+  #app-header a {
+    color: whitesmoke;
+    text-decoration: none;
+    text-decoration-color: whitesmoke;
+    margin: 0 0.5em;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: green;
+  }
+  
+  li {
+    cursor: pointer;
+    padding: 1em;
+  }
+  
+  li:hover {
+    background-color: dodgerblue;
+  }
+  
+  .active {
+    background-color: rgb(69, 160, 252);
+    border-radius: 5;
+  }
+
+  .navlink {
+      color: whitesmoke;
+  }
