@@ -38,26 +38,28 @@ class PlotContainer extends React.Component {
     );
   }
 
-  displayPlots = Plot => {
-    return this.state.plots.map(plot => {
-      return <Plot key={Math.random() * 10000} plot={plot} />;
-    });
-  };
+//   displayPlots = Plot => {
+//     return this.state.plots.map(plot => {
+        
+//       return <Plot key={Math.random() * 10000} plot={plot} />;
+//     });
+//   };
 
   render() {
     console.log(this.state.plots);
-    let plots=null;
-    plots = this.state.plots.map(plot => {
-    //   return <Card key={plot._id} plot={plot}/>
-    console.log(plot.plotName)
-        // return(
-        //     // <Card className="plotContainer">
-        //     //     <p>{plot.plotName}</p>
-        //     // </Card>
-        //     <p>Hello</p>
-        // )
+    let plots =  this.state.plots.map(plot => {
+        return (<Card key={plot._id}>
+                <Card.Header>{plot.plotName}</Card.Header>
+
+            </Card>)
+    });
+        return(
+            <>
+            {plots}
+            </>
+        )
     }
-    // )
-  }
+    
+  
 }
 export default PlotContainer;
