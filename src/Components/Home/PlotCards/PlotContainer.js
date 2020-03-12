@@ -1,8 +1,7 @@
 import React from "react";
-import Plot from "./Plots/Plots";
-import ContainerTop from "./ContainerTop/ContainerTop";
-// import postSeed from "./postSeed.json";
-import { Card } from 'semantic-ui-react';
+import AddPlot from '../AddPlot/AddPlot'
+import { Button, Card } from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 import axios from 'axios'
 
 class PlotContainer extends React.Component {
@@ -14,6 +13,10 @@ class PlotContainer extends React.Component {
   };
 
   componentDidMount() {
+    this.getPlots();
+  }
+
+  getPlots = () => {
     axios.get(`${process.env.REACT_APP_API_URL}/plots/all`)
     .then(res => {
       console.log(res);
@@ -24,42 +27,55 @@ class PlotContainer extends React.Component {
     .catch(err => {
       console.log(err.response);
     })
-    
   }
 
-  displayTop() {
-    return (
-      <ContainerTop
-        key={Math.random() * 100}
-        plotName={this.state.plotName}
-        // subtitle={this.state.subtitle}
-        // img={this.state.img}
-      />
-    );
-  }
-
-//   displayPlots = Plot => {
-//     return this.state.plots.map(plot => {
-        
-//       return <Plot key={Math.random() * 10000} plot={plot} />;
-//     });
-//   };
+  deleteGarden = (id) => {
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/plots/${id}`, {withCredentials: true})
+      .then(res => {
+        console.log(res);
+        this.getPlots();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   render() {
     console.log(this.state.plots);
     let plots =  this.state.plots.map(plot => {
-        return (<Card key={plot._id}>
+        return (
+            <Card key={plot._id}>
+                
+                <Card.Content>
                 <Card.Header>{plot.plotName}</Card.Header>
-
-            </Card>)
-    });
-        return(
-            <>
+                <Card.Meta>IBC Media Garden</Card.Meta>
+                <Card.Description>
+                  Click the green button to view the garden
+                </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                <div className='ui two buttons'>
+                <Link to={`/PlotView/${plot._id}`}>
+                  <Button basic color='green'>
+                    
+                    View
+                  </Button>
+                  </Link>
+                  <Button basic color='red' onClick={()=>this.deleteGarden(plot._id)}>
+                    Delete
+                  </Button>
+                </div>
+              </Card.Content>
+                    </Card>
+                )
+            });
+    return(
+        <>
             {plots}
-            </>
-        )
-    }
-    
-  
+            <AddPlot getPlots={this.getPlots}/>
+        </>
+    )
+  } 
 }
 export default PlotContainer;

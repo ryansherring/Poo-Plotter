@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button, Card, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 import CreatePlot from './CreatePlot'
 
-const AddPlot = () => (
+const AddPlot = (props) => (
 <Card>
       <Card.Content>
         <Image
@@ -18,12 +18,9 @@ const AddPlot = () => (
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
-            < CreatePlot />
-          </Button>
-          <Button basic color='red'>
-            Or Don't
-          </Button>
+            < CreatePlot getPlots={props.getPlots}/>
+          
+            
         </div>
       </Card.Content>
     </Card>

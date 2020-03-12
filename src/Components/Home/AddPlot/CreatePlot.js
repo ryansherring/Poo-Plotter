@@ -25,6 +25,7 @@ class CreatePlot extends Component {
     axios.post(`${process.env.REACT_APP_API_URL}/plots/create`, this.state, {withCredentials: true})
       .then(res => {
         console.log(res);
+        this.props.getPlots();
         this.close();
       }).catch(err => {
         console.log(err.response);

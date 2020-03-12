@@ -2,7 +2,7 @@ import React from 'react';
 import Profile from '../Components/Profile/Profile';
 // import ProfileEditForm from '../../components/ProfileEditForm/ProfileEditForm';
 // import Post from '../../components/PostContainer/Post/Post';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import axios from 'axios';
 // post seed dummy data
 // import postSeed from "../../components/PostContainer/postSeed.json";
@@ -10,8 +10,6 @@ import axios from 'axios';
 class ProfileContainer extends React.Component {
 	state = {
 		profile: {},
-		// showEditForm: false,
-		// posts: [],
 	};
 
 	componentDidMount() {

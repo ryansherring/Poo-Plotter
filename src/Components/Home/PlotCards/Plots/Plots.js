@@ -1,20 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Card, CardHeader } from "semantic-ui-react"
 // import "./Plot.css";
 
 const Plot = props => {
-  const { _id, plotName } = props.plot;
+  const {plotName} = props.plots.plotName;
   return (
     <Card>
       {/* <img className="plot-thumbnail" src={img} alt={title}></img> */}
-      <CardHeader></CardHeader>
-        <div className="plot-header">
-          <h3>
-            <Link to={`/plots/${_id}`}></Link>
-          </h3>
-        </div>
-        <p className="plot-snippet">{plotName}</p>
+      <Card.Content>
+        <Card.Header>{plotName}</Card.Header>
+        <Card.Meta>meta info</Card.Meta>
+        <Card.Description>
+        <strong>Create a new Card</strong>
+        </Card.Description>
+      </Card.Content>
+      
     </Card>
   );
 };
