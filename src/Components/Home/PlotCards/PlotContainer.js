@@ -1,8 +1,9 @@
 import React from "react";
 import AddPlot from '../AddPlot/AddPlot'
-import { Button, Card } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+
 
 class PlotContainer extends React.Component {
   state = {
@@ -45,27 +46,26 @@ class PlotContainer extends React.Component {
     console.log(this.state.plots);
     let plots =  this.state.plots.map(plot => {
         return (
+          // <Image src='https://static.photospublic.com/wp-content/uploads/Subtle-blur-ocean-water-background-PhotosPublic4216FD.jpg' fluid />
             <Card key={plot._id}>
                 
-                <Card.Content>
+                <Card.Content  textAlign='center'>
                 <Card.Header>{plot.plotName}</Card.Header>
                 <Card.Meta>IBC Media Garden</Card.Meta>
                 <Card.Description>
                   Click the green button to view the garden
                 </Card.Description>
                 </Card.Content>
-                <Card.Content extra>
-                <div className='ui two buttons'>
-                <Link to={`/PlotView/${plot._id}`}>
+                <Card.Content className='ui two buttons'>
+                <Link to={`/plot/${plot._id}`}>
                   <Button basic color='green'>
-                    
-                    View
+                    Open Garden
                   </Button>
                   </Link>
                   <Button basic color='red' onClick={()=>this.deleteGarden(plot._id)}>
                     Delete
                   </Button>
-                </div>
+                
               </Card.Content>
                     </Card>
                 )
