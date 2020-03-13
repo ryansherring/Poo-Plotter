@@ -46,7 +46,6 @@ class PlantCards extends Component {
                                 <Button basic color='green' onClick={() => this.props.addPlantToPlot(plant._id)}>+</Button>
                                 <Button basic color='red' onClick={()=>this.props.removePlantFromPlot(plant._id)}>-</Button>
                             </Card.Content>
-        
                         </Card>
                     </Card.Group>
                 )

@@ -53,7 +53,7 @@ class PlotContainer extends React.Component {
                 <Card.Header>{plot.plotName}</Card.Header>
                 <Card.Meta>IBC Media Garden</Card.Meta>
                 <Card.Description>
-                  Click the green button to view the garden
+                  Plants: {plot.Plants.length}
                 </Card.Description>
                 </Card.Content>
                 <Card.Content className='ui two buttons'>

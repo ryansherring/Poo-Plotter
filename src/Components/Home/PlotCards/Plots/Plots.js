@@ -4,6 +4,7 @@ import { Card, CardHeader } from "semantic-ui-react"
 
 const Plot = props => {
   const {plotName} = props.plots.plotName;
+  const {length} = props.plots.Plants.length
   return (
     <Card>
       {/* <img className="plot-thumbnail" src={img} alt={title}></img> */}
@@ -11,7 +12,7 @@ const Plot = props => {
         <Card.Header>{plotName}</Card.Header>
         <Card.Meta>meta info</Card.Meta>
         <Card.Description>
-        <strong>Create a new Card</strong>
+        <strong>{length}</strong>
         </Card.Description>
       </Card.Content>
       

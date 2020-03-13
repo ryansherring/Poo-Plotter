@@ -22,7 +22,7 @@ class Landing extends Component {
     />
     <Header
       as='h3'
-      content='This app will help you plan out your Aquaponic Garden. Sign up in the nav now!'
+      content='This app will help you plan out your Aquaponic Garden. Sign up and log in in the nav now!'
       
       style={{
         fontSize: '1.7em',

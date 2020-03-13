@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { Grid, Container, Image, Segment } from 'semantic-ui-react';
+import { Grid, Alert, Image, Segment } from 'semantic-ui-react';
 import axios from 'axios'
 import PlantCards from './PlantCards';
-import PlantContainer from './PlantContainer'
+// import PlantContainer from './PlantContainer'
 
 class ViewPlot extends Component {
     state = {
@@ -16,7 +16,7 @@ class ViewPlot extends Component {
     showPlot = () => {
         axios.get(`${process.env.REACT_APP_API_URL}/plots/show/${this.props.match.params.id}`)
             .then(res => {
-            // console.log(res);
+            console.log(res);
             this.setState({
                 plot: res.data.data,
             })
@@ -65,8 +65,8 @@ class ViewPlot extends Component {
 
     render(){
 		return (
+            // map plots
 			<div className='plot-view'>
-            
 				<Grid style={{background: 'grey'}}>
 					<Grid.Column width={3}>
                         {/* <Container> */}
@@ -91,9 +91,11 @@ class ViewPlot extends Component {
                     </Grid.Column>
                     <Grid.Column width={3}>
                         {/* <Container> */}
-                        <Segment celled padded style={{height: '90vh', textAlign: 'center', background:'lightblue'}}>
+                        <Segment /*key={plot._id}*/</Grid.Column> celled padded style={{height: '90vh', textAlign: 'center', background:'lightblue'}}>
                             <h5>Garden Size: </h5>
                             <p>{this.state.plot.plotSize*3} square feet</p>
+                            <h5>Plants: </h5>
+                            <p>{this.state.plot.Plants}</p>
                             <h5>Fish needed:</h5>
                             <p>{this.state.plot.plotSize*6} to {this.state.plot.plotSize*8}  lbs</p>
                             <h5>Fish Tank Size: </h5>

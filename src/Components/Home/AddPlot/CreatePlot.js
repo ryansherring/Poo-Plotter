@@ -67,7 +67,7 @@ class CreatePlot extends Component {
                       />
                     </Form.Field>
                     <Form.Field>
-                      <label htmlFor='name'>plotSize</label>
+                      <label htmlFor='name'>How many people will this serve? (Number)</label>
                       <input
                         onChange={this.handleChange}
                         className='form-control form-control-lg'
@@ -85,7 +85,7 @@ class CreatePlot extends Component {
           <Modal.Actions>
             <button className='btn btn-primary float-right' onClick={this.handleSubmit}>
               create
-              </button>
+            </button>
           </Modal.Actions>
         </Modal>
       </>
