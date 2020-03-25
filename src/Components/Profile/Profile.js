@@ -10,6 +10,7 @@ const Profile = (props) => {
       <p>{props.profile.email}</p>
     </Segment>
   )
+  
 };
 
 export default Profile;

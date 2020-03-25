@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Grid, Alert, Image, Segment } from 'semantic-ui-react';
+import { Grid, Image, Segment } from 'semantic-ui-react';
 import axios from 'axios'
 import PlantCards from './PlantCards';
 // import PlantContainer from './PlantContainer'
@@ -31,7 +31,6 @@ class ViewPlot extends Component {
             console.log(res);
             this.setState({
                 plot: res.data.data,
-
             })
         })
     }
@@ -69,29 +68,23 @@ class ViewPlot extends Component {
 			<div className='plot-view'>
 				<Grid style={{background: 'grey'}}>
 					<Grid.Column width={3}>
-                        {/* <Container> */}
-                            <Segment padded style={{overflow: 'auto', maxHeight: '90vh', background: 'lightgreen'}}>
+                        <Segment padded style={{overflow: 'auto', maxHeight: '90vh', background: 'lightgreen'}}>
                             <PlantCards 
                             addPlantToPlot={this.addPlantToPlot} 
                             removePlantFromPlot={this.removePlantFromPlot}
                             />
                         </Segment>
-                        {/* </Container> */}
 					</Grid.Column>
 					<Grid.Column width={10} textAlign='Center'>
-                        {/* <Container> */}
-                        <Segment celled padded style={{height: '90vh', textAlign: 'center', textAlign: 'center'}}>
+                        <Segment celled padded style={{height: '90vh', textAlign: 'center'}}>
                             <h3>{this.state.plot.plotName}</h3>
-                            <Segment style={{background: 'brown', maxWidth: '60%', marginLeft: '20'}}>
-                                <Image style={{maxWidth: '100%'}} src='https://cdn.shopify.com/s/files/1/1466/7074/products/Aero_Clay_2.jpg?v=1537779855' />
+                            <Segment style={{background: 'brown', maxWidth: '60%', marginLeft: '11vw', marginTop: '10vh'}}>
+                                <Image style={{minWidth: '90%', maxWidth: '100%'}} src='https://cdn.shopify.com/s/files/1/1466/7074/products/Aero_Clay_2.jpg?v=1537779855' />
                             </Segment>
-                            {/* <PlantContainer/> */}
                         </Segment>
-                        {/* </Container> */}
                     </Grid.Column>
                     <Grid.Column width={3}>
-                        {/* <Container> */}
-                        <Segment /*key={plot._id}*/</Grid.Column> celled padded style={{height: '90vh', textAlign: 'center', background:'lightblue'}}>
+                        <Segment /*key={plot._id}*/ celled padded style={{overflow: 'auto', height: '90vh', textAlign: 'center', background:'lightblue'}}>
                             <h5>Garden Size: </h5>
                             <p>{this.state.plot.plotSize*3} square feet</p>
                             <h5>Plants: </h5>
@@ -106,10 +99,8 @@ class ViewPlot extends Component {
                             <p>{this.state.plot.plotSize*200*2} Gallons Per Hour Pump minus head-height loss and 10-30% efficiency loss depending on what you buy</p>
                             <h5>Siphon Needed: </h5>
                             <p>Plumbing Options coming soon</p>
-                            <h5></h5>
 
                         </Segment>
-                        {/* </Container> */}
                     </Grid.Column>
 				</Grid>
 			</div>
