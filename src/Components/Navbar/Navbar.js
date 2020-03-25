@@ -16,7 +16,7 @@ export default class Navbar extends Component {
     //console.log(this.props)
     const { activeItem } = this.state
     return (
-      <Menu inverted>
+      <Menu inverted style={{ marginBottom: '0px' }}>
         <Menu.Item header to='/'>
           <Link to='/' ><h3>PooPlotter</h3></Link>
           </Menu.Item>
