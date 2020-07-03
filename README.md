@@ -1,12 +1,14 @@
 ### This is PooPlotter!
 
-I know the name is... different. That's because this is an Aquaponic Garden planner!
+I know the name is... different. That's because this is an Aquaponic Garden planner! This is an app that plots out a self-sustainable, self-sufficient garden for the user's own backyard or classroom. 
 
 ### What is Aquaponics?
 
 Aquaponics is a sustainable form of farming/gardening in which plants are grown with no soil! It simulates a deconstructed river in that fish in a tank provide nutrient-rich waste, fed through a filtered water stream to plant beds, also growing in water. The plants then take up the waste nutrients and clean the water for the fish, sending the water via pump back to the fish tank, and the cycle continues! 
 
 For those interested in a deeper dive in how aquaponics is an ideal food growing system, a quick search on google, youtube, or udemy will yield hundreds if not thousands of results from commercial and hobby growers alike!
+
+Gardening this way can recycle up to 92% of the water used and is recycled! Additionally, this is a great way to become independant from external markets for the production of all vegetables in your diet!
 
 ### Alright, So How Does PooPlotter Help?
 
